@@ -1,5 +1,5 @@
 resource "aws_instance" "this" {
-  ami           = var.ami_id
+  ami           = data.aws_ami.expense.id
   instance_type = "t2.medium"
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id ]
   root_block_device {
